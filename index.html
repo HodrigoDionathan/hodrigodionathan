@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hódrigo Dionathan - Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .projetos {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        p {
+            text-align: justify;
+
+        }
+
+        h4 {
+            text-align: center;
+            font-size: small;
+        }
+
+        .projeto {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(50% - 20px);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .projeto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        
+
+        .ebook img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+
+
+       
+           
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="imagens/hodrigo.png" alt="Foto de Hódrigo Dionathan" class="profile-img">
+                <h1>Hódrigo Dionathan Alves Santos</h1>
+                <h4>Engenheiro de Software | Escritor | Técnico em Refrigeração, Eletrôtecnica e Automação Industrial</h4>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#ebooks">Ebooks</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="sobre" class="container">
+        <h2>Sobre </h2>
+        <p>Hódrigo Dionathan Alves Santos é um profissional multidisciplinar com formação técnica e acadêmica voltada para a inovação e o desenvolvimento de soluções tecnológicas. Atualmente, cursa Engenharia de Software pela Uninter, onde aprimora seus conhecimentos em programação, desenvolvimento de sistemas e gestão de projetos de software.
+
+Com uma sólida base técnica, Hódrigo é formado em Refrigeração Industrial, Eletrôtecnica e Automação Industrial, áreas que lhe proporcionaram expertise em sistemas complexos e uma visão abrangente para a resolução de problemas técnicos. Sua trajetória profissional é marcada pela busca constante por conhecimento e pela aplicação prática de conceitos inovadores.
+
+Além de sua atuação na área técnica, Hódrigo é escritor e autor do livro "A ARTE DE DESISTIR - Navegando entre o medo e a coragem", lançado em janeiro de 2025. A obra reflete sua capacidade de explorar temas profundos e inspiradores, como superação, resiliência e a importância de enfrentar desafios com determinação. Através da escrita, ele busca compartilhar reflexões que possam motivar e inspirar pessoas em suas jornadas pessoais e profissionais.</p>
+        <a href="https://www.linkedin.com/in/hodrigo-dionathan-46052b299?fbclid=PAZXh0bgNhZW0CMTEAAaa_N-zY317VT6oMbW1u8dIQnijbDsF1vgS6gWYfuNZr30s8JWcDH57vcOE_aem_Dwzi6QhKgUt_cDyIo3Fhcg" target="_blank" class="linkedin-btn"> LinkedIn</a>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>Portfólio</h2>
+        <div class="projetos">
+            <div class="projeto">
+                <h3>Sistema didático de Conversão e Geração de Energia</h3>
+                <p>Uma ferramenta educacional que visa demonstrar de forma prática os princípios de conversão e geração de energia elétrica.</p>
+                <a href="https://tecnicosporvocacao.com/pindex.html" target="_blank" class="linkedin-btn">LINK</a>
+            </div>
+            <div class="projeto">
+                <h3>Climatizador Refrigerado</h3>
+                <p>Destaca benefícios como eficiência energética, baixo custo e melhoria na qualidade do ar, promovendo conforto térmico e saúde respiratória. Utiliza automação via Wi-Fi e controle de temperatura avançado.</p>
+                <a href="https://tecnicosporvocacao.com/climatizador.pdf" target="_blank" class="linkedin-btn">LINK</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="ebooks" class="containeer">
+        <h2></h2>
+        <p></p>
+        
+        <div class="ebook">
+            
+            <img src="imagens/artededesistir.jpg" alt="Capa do livro A ARTE DE DESISTIR" style="    width: 170px;">
+          
+            <h3>
+                <P>Livro Ebook</P>A ARTE DE DESISTIR </h3>
+           
+            <p>Lançado em janeiro de 2025.</p>
+            
+            <button onclick="window.location.href='https://hotmart.com/pt-br/marketplace/produtos/a-arte-de-desistir-navegando-entre-o-medo-e-a-coragem/J97710167U'">Saiba Mais</button>
+        </div>
+
+        <div class="ebook">
+          
+            <img src="imagens/regrigeracao.jpg" alt="Capa do livro REFRIGERAÇÃO INDUSTRIAL 3.0" style="    width: 170px;">
+            
+            <h3><P>Livro Ebook</P>REFRIGERAÇÃO INDUSTRIAL 3.0 </h3>
+          
+            <p>Lançado em Julho de 2020.</p>
+           
+            <button onclick="window.location.href='https://hotmart.com/pt-br/marketplace/produtos/refrigeracao-industrial-3-0/D97799140F'">Saiba Mais</button>
+           
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container">
+        <h2>Contato</h2>
+        <p>Envie sua Mensagem com NOME e ASSUNTO para:</p>
+        <p>
+            <strong>Email:</strong> <a href="hodrigodionatha@gmail.com">hodrigodionatha@gmail.com</a><br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5521980023732" target="_blank">Contato</a>
+        </p>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hódrigo  Santos.</p>
+        </div>
+    </footer>
+</body>
+</html>
