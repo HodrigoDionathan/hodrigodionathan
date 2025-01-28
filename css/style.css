@@ -8,11 +8,38 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #0f0f0f, #555); /* Gradiente de fundo */
     color: #fff;
     padding: 60px 0;
     text-align: center;
+    position: relative; /* Necessário para o pseudo-elemento */
+    overflow: hidden; /* Impede que o brilho ultrapasse os limites do header */
 }
+
+
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%; /* Começa fora do header */
+    width: 50%; /* Largura maior para cobrir todo o header ao se mover */
+    height: 600%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shine 5s infinite;
+    pointer-events: none; /* Garante que o brilho não interfere na interação do usuário */
+}
+
+@keyframes shine {
+    0% {
+        left: -150%; /* Inicia fora do lado esquerdo */
+    }
+    100% {
+        left: 150%; /* Termina fora do lado direito */
+    }
+}
+
+
 
 header .profile {
     max-width: 600px;
@@ -77,9 +104,10 @@ nav ul li a:hover {
 }
 
 .containeer {
-    width: 80%;
+    width: 50%;
     margin: 40px auto;
     display: flex
+   
 ;
 }
 
