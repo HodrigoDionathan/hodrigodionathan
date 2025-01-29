@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -116,6 +115,119 @@
                 margin: 0 10px;
             }
         }
+
+        /* Estilos do Chat Widget */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #25D366;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            padding: 15px;
+        }
+
+        .chat-message {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            height: 40px;
+        }
+
+        .chat-input button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background-color: #128C7E;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .chat-popup.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
     </style>
 
    
@@ -231,5 +343,53 @@ Além de sua atuação na área técnica, Hódrigo é escritor e autor do livro 
         });
     </script>
     
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <h3>Fale Comigo</h3>
+            <button class="close-chat" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message">
+                Olá! Sou sua  Assistente Virtual. Vou transferir suas duvidas para whatsapp de Hódrigo.
+            </div>
+            <div class="chat-input">
+                <textarea id="user-message" placeholder="Digite sua mensagem..."></textarea>
+                <button onclick="sendToWhatsApp()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="chat-button" class="chat-button" onclick="toggleChat()">
+        <img src="imagens/whatsap.png" alt="WhatsApp Chat" width="30" height="30">
+    </button>
+
+    <!-- Scripts do Chat -->
+    <script>
+        function toggleChat() {
+            const popup = document.getElementById('chat-popup');
+            popup.classList.toggle('show');
+        }
+
+        function sendToWhatsApp() {
+            const message = document.getElementById('user-message').value;
+            if (message.trim() !== '') {
+                const phoneNumber = '5521980023732';
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappURL, '_blank');
+                
+                // Limpa a mensagem após enviar
+                document.getElementById('user-message').value = '';
+            }
+        }
+
+        // Adiciona evento de Enter para enviar mensagem
+        document.getElementById('user-message').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendToWhatsApp();
+            }
+        });
+    </script>
 </body>
 </html>
