@@ -66,11 +66,41 @@
             margin-bottom: 10px;
         }
 
+        /* Container para os ebooks */
+        #ebooks {
+            padding: 20px;
+        }
 
+        #ebooks .containeer {
+            max-width: 100%;
+        }
 
-       
-           
-        
+        .ebook {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Media query para desktop */
+        @media screen and (min-width: 768px) {
+            #ebooks .containeer {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .ebook {
+                flex: 1;
+                min-width: 300px;
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,12 +150,11 @@ Além de sua atuação na área técnica, Hódrigo é escritor e autor do livro 
     </section>
 
     <section id="ebooks" class="containeer">
-        <h2></h2>
-        <p></p>
+        
         
         <div class="ebook">
             
-            <img src="imagens/artededesistir.jpg" alt="Capa do livro A ARTE DE DESISTIR" style="    width: 170px;">
+            <img src="imagens/artededesistir.jpg" alt="Capa do livro A ARTE DE DESISTIR" style="    width: 100%;">
           
             <h3>
                 <P>Livro Ebook</P>A ARTE DE DESISTIR </h3>
@@ -137,7 +166,7 @@ Além de sua atuação na área técnica, Hódrigo é escritor e autor do livro 
 
         <div class="ebook">
           
-            <img src="imagens/regrigeracao.jpg" alt="Capa do livro REFRIGERAÇÃO INDUSTRIAL 3.0" style="    width: 170px;">
+            <img src="imagens/regrigeracao.jpg" alt="Capa do livro REFRIGERAÇÃO INDUSTRIAL 3.0" style="    width: 100%;">
             
             <h3><P>Livro Ebook</P>REFRIGERAÇÃO INDUSTRIAL 3.0 </h3>
           
